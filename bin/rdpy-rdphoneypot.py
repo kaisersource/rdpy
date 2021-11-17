@@ -57,9 +57,9 @@ class HoneyPotServer(rdp.RDPServerObserver):
             log.info("%s --- select file (%s, %s) -> %s"%(datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%S.%fZ'),width, height, rssFilePath))
             self._rssFile = rss.createReader(rssFilePath)
         
-        domain, username, password = self._controller.getCredentials()
+        #domain, username, password = self._controller.getCredentials()
         hostname = self._controller.getHostname()
-        log.info("""%s --- Credentials: domain: %s username: %s password: %s hostname: %s"""%(datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%S.%fZ'), domain, username, password, hostname));
+        log.info("""%s --- Credentials: domain: %s hostname: %s"""%(datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%S.%fZ'), domain, hostname));
         self.start()
         
     def onClose(self):
